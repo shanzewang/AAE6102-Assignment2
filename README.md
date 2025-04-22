@@ -82,6 +82,8 @@ Analysis of urban environment data spanning 839 distinct measurement epochs reve
 
 This outcome suggests a notable tradeoff: while filtering enhances precision through signal quality control, it potentially compromises accuracy by reducing the geometric diversity of satellite signals, particularly in the vertical dimension. The reduced satellite count after filtering, while eliminating problematic signals, also diminishes the vertical positioning geometry, potentially explaining the deterioration in three-dimensional positioning performance despite improved precision metrics. Theoretically, this filtering approach could result in insufficient satellite availability for some measurement periods, though in this particular dataset, solutions remained available for all epochs regardless of methodology.
 
+The result graph is shown below,
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/latitude_longitude.png)
 
 
 # Task 3 - GPS RAIM (Receiver Autonomous Integrity Monitoring)
@@ -123,6 +125,11 @@ where $\sigma = 3\text{m}$, and $k(P_{MD}) = Q_N (1 - \frac{P_{MD}}{2})$ with $Q
 Both conventional and weighted RAIM frameworks were evaluated against OLS and WLS positioning outputs respectively. The traditional RAIM implementation revealed certain epochs generating test statistics (represented in performance charts) exceeding calculated thresholds, indicating potential measurement anomalies. Further investigation during isolation phases consistently identified two potentially faulty measurements among the nine received signals for these problematic epochs. This situation prevented successful isolation of individual faults, necessitating positioning abandonment during affected epochs with corresponding suspension of Protection Level calculations. All successfully calculated PLs remained below the established Alert Limit of 50 meters, confirming the effectiveness of the developed RAIM methodology in identifying and excluding compromised or substandard measurements.
 
 The weighted RAIM implementation demonstrated that test statistics across all 926 epochs remained below calculated thresholds. The weighting mechanism eliminated detection of potentially faulty measurements, thereby circumventing isolation procedures. Protection Levels were successfully calculated for all measurement epochs, with verification charts confirming all PL values remained within acceptable Alert Limits.
+
+The result graphs are shown below,
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/OLS.png)
+
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/WLS.png)
 
 # Task 4 – LEO Satellites for Navigation: Challenges in Utilizing LEO Communication Satellites for Navigation: Critical Analysis of System Architecture Limitations
 
