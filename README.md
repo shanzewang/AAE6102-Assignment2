@@ -83,7 +83,7 @@ Analysis of urban environment data spanning 839 distinct measurement epochs reve
 This outcome suggests a notable tradeoff: while filtering enhances precision through signal quality control, it potentially compromises accuracy by reducing the geometric diversity of satellite signals, particularly in the vertical dimension. The reduced satellite count after filtering, while eliminating problematic signals, also diminishes the vertical positioning geometry, potentially explaining the deterioration in three-dimensional positioning performance despite improved precision metrics. Theoretically, this filtering approach could result in insufficient satellite availability for some measurement periods, though in this particular dataset, solutions remained available for all epochs regardless of methodology.
 
 The result graph is shown below,
-![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/latitude_longitude.png)
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/latitude_longitude.png)
 
 
 # Task 3 - GPS RAIM (Receiver Autonomous Integrity Monitoring)
