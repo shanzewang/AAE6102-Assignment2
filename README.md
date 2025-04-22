@@ -4,7 +4,7 @@
 
 ```
 Model: Claude3.7 - Sonnet
-Chatting history: https://claude.ai/share/f709f907-231e-455e-a589-7e116c5c8f52
+Chatting history: https://claude.ai/share/e7a5c995-3a1e-45c0-a660-bf27df5d841d
 ```
 
 ## Introduction
@@ -68,6 +68,11 @@ For current smartphone navigation applications, DGNSS represents the most practi
 
 # Task 4 – LEO Satellites for Navigation: Challenges in Utilizing LEO Communication Satellites for Navigation: Critical Analysis of System Architecture Limitations
 
+```
+Model: Claude3.7 - Sonnet
+Chatting history: https://claude.ai/share/e7a5c995-3a1e-45c0-a660-bf27df5d841d
+```
+
 ## Introduction
 
 The integration of Low Earth Orbit (LEO) communication satellite constellations into navigation frameworks presents a paradigm shift from traditional Medium Earth Orbit (MEO) Global Navigation Satellite Systems (GNSS). While LEO architectures offer theoretical advantages including enhanced signal strength, improved geometric dilution of precision, and reduced propagation delays, they introduce significant technical and operational challenges that require rigorous examination. This analysis provides a systematic assessment of the primary obstacles in five critical domains that constrain LEO-based navigation capabilities.
@@ -118,6 +123,11 @@ The utilization of LEO communication satellites for navigation purposes represen
 
 
 # Task5 - GNSS Remote Sensing: The Impact of GNSS Radio Occultation in Remote Sensing Applications
+
+```
+Model: Claude3.7 - Sonnet
+Chatting history: https://claude.ai/share/e7a5c995-3a1e-45c0-a660-bf27df5d841d
+```
 
 ## Introduction: Principles and Emergence of GNSS-RO
 
