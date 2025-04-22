@@ -30,22 +30,22 @@ Standard GNSS positioning in smartphones typically achieves only 5-10 meter accu
 ## Explanation of Key Comparison Factors
 
 ### Accuracy
-DGNSS provides meter-level accuracy through regional correction data, while RTK achieves centimeter-level precision using carrier phase measurements. PPP delivers decimeter accuracy through precise satellite orbit and clock corrections. PPP-RTK combines these approaches for consistent centimeter-to-decimeter level accuracy.
+DGNSS provides corrections enabling meter-range accuracy. RTK technology achieves centimeter-level results through phase measurement analysis. PPP delivers decimeter accuracy by utilizing precise orbital and timing data. The hybrid PPP-RTK approach combines methodologies for reliable centimeter-to-decimeter positioning.
 
 ### Convergence Time
-DGNSS corrections apply almost instantly. RTK requires initialization time to resolve carrier phase ambiguities. PPP needs extended observation periods to reach full accuracy. PPP-RTK significantly improves on PPP's convergence time through regional augmentation data.
+DGNSS corrections are applied virtually immediately. RTK requires initialization periods for phase ambiguity resolution. PPP necessitates extended observation windows to achieve optimal accuracy. The hybrid PPP-RTK substantially reduces initialization periods through enhanced regional data integration.
 
 ### Hardware Compatibility
-Most smartphones contain single-frequency receivers compatible with DGNSS. RTK, PPP, and PPP-RTK benefit substantially from dual-frequency receivers, which are currently limited to premium smartphone models.
+Most current mobile devices contain basic receivers suitable for DGNSS implementation. RTK, PPP, and PPP-RTK performance improves significantly with dual-frequency receivers, currently available only in premium mobile devices.
 
 ### Computational Demands and Battery Impact
-DGNSS requires minimal processing power. RTK algorithms demand moderate computational resources. PPP and PPP-RTK involve complex calculations that strain smartphone processors and significantly impact battery life when running continuously.
+DGNSS requires minimal computational resources. RTK processing demands moderate device capabilities. PPP and PPP-RTK involve sophisticated algorithms that challenge mobile processors and significantly increase energy consumption during continuous operation.
 
 ### Smartphone Integration Feasibility
-DGNSS can be readily implemented in existing smartphone hardware. RTK typically requires external receivers for optimal performance. PPP and PPP-RTK integration faces challenges with current smartphone antenna limitations and processing capabilities.
+DGNSS can be readily deployed on existing mobile hardware. RTK typically necessitates external hardware components for optimal results. PPP and PPP-RTK integration presents challenges related to mobile antenna limitations and processing constraints.
 
 ### Urban Performance
-Urban environments present significant challenges for all GNSS techniques due to signal blockage, multipath effects, and reduced satellite visibility. DGNSS achieves moderate performance as it corrects for atmospheric and satellite errors but not multipath effects. RTK performs poorly to moderately in urban settings as it requires continuous carrier phase measurements easily disrupted by buildings and suffers from cycle slips caused by signal blockages. PPP performs worst in urban environments because its convergence process must restart after signal interruptions and requires extended continuous satellite tracking. PPP-RTK achieves better urban results by combining regional augmentation benefits with faster re-convergence capabilities after signal interruptions.
+Built environments create substantial challenges for all satellite positioning technologies due to signal obstruction, reflection issues, and limited satellite visibility. DGNSS achieves adequate performance through atmospheric and satellite error correction, though multipath issues remain. RTK performs inconsistently in urban contexts due to carrier phase measurement disruptions and signal discontinuities caused by structures. PPP exhibits the poorest urban performance as its convergence process must restart after interruptions. PPP-RTK delivers improved urban results through enhanced regional augmentation and faster recovery capabilities.
 
 ## Analysis by Technique
 
