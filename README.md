@@ -1,4 +1,4 @@
-# AAE6102-Assignment2
+![585bf75bff86edc32f55d829ecb6a27](https://github.com/user-attachments/assets/96ef6544-feb9-4d13-966f-cef2de4fc676)# AAE6102-Assignment2
 
 # Task 1 – Differential GNSS Positioning: Advanced GNSS Techniques for Smartphone Navigation: Comparative Analysis
 
@@ -65,6 +65,64 @@ This integrated approach represents a promising future direction, offering reduc
 
 For current smartphone navigation applications, DGNSS represents the most practical solution, balancing improved accuracy with feasible implementation requirements. As smartphone hardware evolves, PPP-RTK shows the greatest promise for future high-precision navigation applications, particularly as dual-frequency receivers become standard in consumer devices.
 
+
+# Task 2 - GNSS in Urban Areas
+
+## Fundamentals of Skymask Application
+
+The analyzed skymask information comprises correlations between directional measurements—specifically the azimuthal coordinates (AZ values ranging from 1-360 degrees) and their associated minimum elevation thresholds (EL values) that permit direct visibility. When employing Standard Least-squares Estimation techniques, incoming satellite transmissions can be evaluated by determining their specific azimuthal position, then assessing whether the corresponding elevation exceeds the minimum threshold established in the skymask dataset. Transmissions with elevations falling below these thresholds are considered obstructed and subsequently excluded from positioning calculations. Should fewer than four satellites remain viable after this filtering procedure, position determination for that particular time point becomes unfeasible.
+
+## Processing Methodology Description
+
+The procedural framework for implementing skymask filtering operates as follows: Initially, the system processes a collection of GNSS observations with no qualifying line-of-sight transmissions recorded. For each detected satellite, the system calculates its elevation parameter and determines its azimuthal orientation. Using this azimuth value, the corresponding minimum elevation requirement is retrieved from the skymask dataset. The system then evaluates whether the satellite's actual elevation falls below this threshold value. If so, the transmission is classified as non-line-of-sight and excluded; otherwise, it increases the running count of viable observations. This process repeats for all detected satellites. Upon completion, if the total of qualifying transmissions falls below four, the positioning attempt is abandoned for that epoch; otherwise, the qualifying satellite data proceeds to the positioning computation stage.
+
+## Performance Analysis Results
+
+Analysis of urban environment data spanning 839 distinct measurement epochs revealed notable differences between standard estimation techniques and those incorporating skymask filtering. The implementation of skymask filtering demonstrated significant improvements in positioning precision by eliminating low-quality non-line-of-sight transmissions. However, numerical assessment revealed a complex impact on overall accuracy metrics. The standard estimation technique produced a three-dimensional root-mean-square error of 85.13 meters with a standard deviation of 35.33 meters across all 839 measurement epochs. In contrast, the skymask-enhanced approach yielded a higher root-mean-square error of 100.36 meters but achieved a slightly improved standard deviation of 33.18 meters, also maintaining complete availability across all 839 epochs.
+
+This outcome suggests a notable tradeoff: while filtering enhances precision through signal quality control, it potentially compromises accuracy by reducing the geometric diversity of satellite signals, particularly in the vertical dimension. The reduced satellite count after filtering, while eliminating problematic signals, also diminishes the vertical positioning geometry, potentially explaining the deterioration in three-dimensional positioning performance despite improved precision metrics. Theoretically, this filtering approach could result in insufficient satellite availability for some measurement periods, though in this particular dataset, solutions remained available for all epochs regardless of methodology.
+
+
+
+# Task 3 - GPS RAIM (Receiver Autonomous Integrity Monitoring)
+
+## Dataset and Methodology Overview
+
+This analysis employs the "OpenSky" dataset containing 926 distinct temporal measurements. Each measurement epoch consistently records 9 satellite signal receptions. The methodology implements RAIM protocols which first perform fault detection, followed by isolation procedures. Upon identifying a single erroneous measurement, the system isolates this specific observation and recalculates positioning parameters.
+
+## Implementation Specifications
+
+For Weighted Least Squares positioning implementation, modify `settings.sys.ls_type = 1` in the "42.m" file. The weighted RAIM algorithm integration occurs within lines 154-189 of "calcPosLSE.m", utilizing supporting functional components "chi2_detector.m" and "compute_PL.m".
+
+## Mathematical Framework
+
+The weighted position estimation $\boldsymbol{X}$ is determined through the expression:
+
+$$\boldsymbol{X} = (G^T W G)^{-1} G^T W \boldsymbol{Y}, \tag{1}$$
+
+with the WSSE (Weighted Sum of Squared Errors) statistical metric formulated as:
+
+$$WSSE = \sqrt{\boldsymbol{Y}^T W (I - P) \boldsymbol{Y}}, \tag{2}$$
+
+where the detection threshold $T$ is established by:
+
+$$T(N, P_{FA}) = \sqrt{Q_{\chi^2, N-4}(1 - P_{FA})}, \tag{3}$$
+
+with $Q_{\chi^2, N-4}(\cdot)$ representing the quantile function for Chi-square distributions having $N-4$ degrees of freedom. The three-dimensional Protection slope parameter for each satellite $i$ is calculated using:
+
+$$\text{Pslope} = \frac{\sqrt{(K^2_{1,i} + K^2_{2,i} + K^2_{3,i})}}{\sqrt{W_{ii}(1 - P_{ii})}}. \tag{4}$$
+
+Integration of equations $(3)$ and $(4)$ enables computation of the three-dimensional Protection Level (PL):
+
+$$\text{PL} = max[\text{Pslope}] T(N, P_{FA}) + k(P_{MD})\sigma, \tag{5}$$
+
+where $\sigma = 3\text{m}$, and $k(P_{MD}) = Q_N (1 - \frac{P_{MD}}{2})$ with $Q_N(\cdot)$ denoting the standard normal distribution quantile function.
+
+## Performance Assessment
+
+Both conventional and weighted RAIM frameworks were evaluated against OLS and WLS positioning outputs respectively. The traditional RAIM implementation revealed certain epochs generating test statistics (represented in performance charts) exceeding calculated thresholds, indicating potential measurement anomalies. Further investigation during isolation phases consistently identified two potentially faulty measurements among the nine received signals for these problematic epochs. This situation prevented successful isolation of individual faults, necessitating positioning abandonment during affected epochs with corresponding suspension of Protection Level calculations. All successfully calculated PLs remained below the established Alert Limit of 50 meters, confirming the effectiveness of the developed RAIM methodology in identifying and excluding compromised or substandard measurements.
+
+The weighted RAIM implementation demonstrated that test statistics across all 926 epochs remained below calculated thresholds. The weighting mechanism eliminated detection of potentially faulty measurements, thereby circumventing isolation procedures. Protection Levels were successfully calculated for all measurement epochs, with verification charts confirming all PL values remained within acceptable Alert Limits.
 
 # Task 4 – LEO Satellites for Navigation: Challenges in Utilizing LEO Communication Satellites for Navigation: Critical Analysis of System Architecture Limitations
 
