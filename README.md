@@ -127,9 +127,9 @@ Both conventional and weighted RAIM frameworks were evaluated against OLS and WL
 The weighted RAIM implementation demonstrated that test statistics across all 926 epochs remained below calculated thresholds. The weighting mechanism eliminated detection of potentially faulty measurements, thereby circumventing isolation procedures. Protection Levels were successfully calculated for all measurement epochs, with verification charts confirming all PL values remained within acceptable Alert Limits.
 
 The result graphs are shown below,
-![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/OLS.png)
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/OLS.png)
 
-![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/results_graph/WLS.png)
+![image](https://github.com/shanzewang/AAE6102-Assignment2/blob/main/code/WLS.png)
 
 # Task 4 – LEO Satellites for Navigation: Challenges in Utilizing LEO Communication Satellites for Navigation: Critical Analysis of System Architecture Limitations
 
