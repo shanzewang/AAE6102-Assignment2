@@ -1,4 +1,4 @@
-![585bf75bff86edc32f55d829ecb6a27](https://github.com/user-attachments/assets/96ef6544-feb9-4d13-966f-cef2de4fc676)# AAE6102-Assignment2
+# AAE6102-Assignment2
 
 # Task 1 – Differential GNSS Positioning: Advanced GNSS Techniques for Smartphone Navigation: Comparative Analysis
 
