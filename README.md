@@ -1,6 +1,11 @@
 # AAE6102-Assignment2
 
-# Advanced GNSS Techniques for Smartphone Navigation: Comparative Analysis
+# Task 1 – Differential GNSS Positioning: Advanced GNSS Techniques for Smartphone Navigation: Comparative Analysis
+
+```
+Model: Claude3.7
+Chatting history: https://claude.ai/share/f709f907-231e-455e-a589-7e116c5c8f52
+```
 
 ## Introduction
 
