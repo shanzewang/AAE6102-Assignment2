@@ -50,16 +50,16 @@ Built environments create substantial challenges for all satellite positioning t
 ## Analysis by Technique
 
 ### Differential GNSS (DGNSS)
-DGNSS represents the most practical solution for current smartphone implementation. Its compatibility with single-frequency receivers, modest computational requirements, and widespread correction infrastructure make it immediately applicable to most devices. The moderate urban performance and meter-level accuracy are sufficient for many consumer navigation applications.
+DGNSS represents the most immediately viable solution for contemporary mobile implementation. Its compatibility with standard receivers, modest computational demands, and established correction infrastructure make it readily applicable to most devices. The adequate urban performance and meter-level accuracy suffice for numerous consumer navigation requirements.
 
 ### Real-Time Kinematic (RTK)
-Despite offering superior accuracy, RTK implementation in smartphones faces significant challenges. The technique's sensitivity to signal interruptions, high data bandwidth requirements, and general need for external receivers limit its practical application in smartphone navigation.
+Despite superior accuracy, RTK deployment in mobile devices faces significant implementation barriers. The methodology's vulnerability to signal disruptions, substantial data requirements, and general dependence on external hardware limit its practical application for mainstream mobile navigation.
 
 ### Precise Point Positioning (PPP)
-PPP eliminates dependency on local reference stations but suffers from extended convergence times and poor urban performance. These limitations, combined with high computational demands, make it currently unsuitable for typical smartphone navigation scenarios requiring immediate positioning.
+PPP eliminates dependence on localized reference infrastructure but suffers from extended initialization periods and poor performance in urban settings. These limitations, coupled with intensive computational requirements, render it currently unsuitable for typical mobile navigation scenarios requiring immediate positioning.
 
 ### PPP-RTK
-This hybrid approach represents a promising future direction, offering improved convergence times compared to PPP and better coverage than RTK. As dual-frequency receivers become standard in smartphones, PPP-RTK may provide the optimal balance of accuracy, coverage, and performance.
+This integrated approach represents a promising future direction, offering reduced initialization times compared to standard PPP and expanded coverage relative to RTK. As dual-frequency receivers become commonplace in mobile devices, the hybrid PPP-RTK methodology may provide an optimal balance of accuracy, coverage, and performance.
 
 ## Conclusion
 
